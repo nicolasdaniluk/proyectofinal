@@ -1,0 +1,69 @@
+<html lang="en" dir="ltr">
+  <head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <title>Proyecto X</title>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+        <img src="kiosco.png" alt="">
+         <h1> Nombre</h1></a>
+      </div>
+      <div class="menu">
+        <label for="menu-icon" class="menu-icon">
+          <i class="fas fa-bars"></i>
+        </label>
+        <input type="checkbox" id="menu-icon">
+
+        <ul>
+          <li><a href="question.html">FAQ</a></li>
+          <li><a href="crear-cuenta.html">Crear cuenta</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="caja">
+    <div class="formulario">
+      <form action="a-donde-mando-la-info.php" method="POST">
+        <fieldset>
+          <legend><h2>Ingresar</h2></legend>
+          <p>
+            <label class="campo">E-Mail</label>
+            <br>
+            <br>
+            <input type="email" name="direccion_email" id="mail" required>
+          </p>
+          <p>
+            <label class="campo">Contraseña</label>
+            <br>
+            <br>
+            <input type="password" name="contraseña" id="pass" required><br>
+              <label class="campo"><a href="#">olvide mi contraseña</a></label>
+          </p>
+        </fieldset>
+      </form>
+      <p>
+        <button type="submit">ingresar</button>
+        <br><br>
+          <label class="campo"><a href="crear-cuenta.html">crear cuenta</a></label>
+      </p>
+    </div>
+  </div>
+  </body>
+      <footer>
+      <ul>
+        <li><a href="question.html">FAQ</a></li>
+          <li><a href="crear-cuenta.html">Crear cuenta</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+      </ul>
+      <ul class="redesfoot">
+        <li><i class="fab fa-facebook-square"></i></li>
+        <li><i class="fab fa-twitter-square"></i></li>
+        <li><i class="fab fa-instagram"></i></li>
+        <li><i class="fab fa-tumblr-square"></i></li>
+      </ul>
+    </footer>
+</html>
