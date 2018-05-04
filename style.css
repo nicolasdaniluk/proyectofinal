@@ -1,0 +1,833 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAV BAR*/
+
+nav{
+    height: 6vh;
+    background-color: #00d8a2;
+    color: #006cd8;
+    padding: 0 10px;
+  }
+.logo{
+  display: inline-block;
+  width:30%;
+  height: inherit;
+  margin-left: 2%;
+}
+nav img{
+   width: 60px;
+   margin-top: 5px;
+}
+h1{
+  width: 30%;
+  display: inline-block;
+  font-size: 3em;
+  margin-left:10px;
+}
+.menu{
+    float: right;
+    display: inline-block;
+    width:30%;
+    height: inherit;
+}
+.menu i{
+  font-size:  3em;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+}
+.menu ul{
+  display: none;body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAV BAR*/
+
+nav{
+    height: 6vh;
+    background-color: #00d8a2;
+    color: #006cd8;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .logo {
+      display: inline-block;
+      width: 30%;
+      height: inherit;
+      margin-left: 1%;
+}
+nav img{
+   width: 22px;
+   margin-top: 5px;
+}
+h1{
+  width: 30%;
+  display: inline-block;
+  font-size: 1em;
+  margin-left:1px;
+}
+.menu{
+    float: right;
+    display: inline-block;
+    width:30%;
+    height: inherit;
+}
+.menu i {
+    font-size: 1.5em;
+    position: absolute;
+    right: 13px;
+    top: 6px;
+    cursor: pointer;
+}
+.menu ul{
+  display: none;
+  list-style-type: none;
+}
+.menu input{
+  display: none;
+}
+
+/* carrousel*/
+.carrousel {
+    height: 40vh;
+    background-color: #d9d9d9;
+    text-align: center;
+    font-size: 28px;
+    color: #00d8a2;
+    padding: 30% 0;
+    box-sizing: border-box;
+}
+
+/* CONTENIDO*/
+.main{
+  background-color: #f2f2f2;
+  padding: 5% 0;
+}
+h2{
+  margin: inherit;
+  padding-top: 20px;
+  text-align: center;
+  margin: 4% 0;
+  font-size: 2em;
+}
+.atributo{
+  margin: 0 auto;
+  margin-bottom: 10%;
+  width: 97%;
+  height: auto;
+  display: inline-block;
+}
+.atr_img {
+    background-color: #006cd8;
+    width: 38vw;
+    height: 20vh;
+    border-radius: 50%;
+    font-size: 3em;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 10%;
+    margin: 0 auto;
+}
+.atr_p{
+  width: 90%;
+  text-align: justify;
+  font-size: 18px;
+  margin: 0 4%;
+}
+.producto{
+    background-color: #006cd8;
+    width: 35%;
+    height: 16vh;
+    font-size: 3em;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 7%;
+    margin: 10px auto;
+    margin-left: 3%;
+    display:inline-block;
+}
+.carrousel2{
+  position: relative;
+}
+.izq, .der {
+    width: 9%;
+    height: 5vh;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    color: #006cd8;
+    font-size: 1.5em;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 0%;
+    border: 1px solid #006cd8;
+    z-index: 1000;
+}
+.izq{
+  position: absolute;
+  top:19%;
+  left: 1%;
+}
+.der{
+  position: absolute;
+  top:20%;
+  right: 1%;
+}
+
+/* footer*/
+footer{
+  background-color: #565656;
+  color: #d9d9d9;
+  padding: 7.5% 10px;
+}
+footer ul{
+  list-style-type: none;
+}
+footer ul li{
+  display: inline-block;
+  margin-right: 2%;
+  font-size: 1em;
+}
+.redesfoot{
+  margin: 5% 0;
+  display: block;
+}
+.redesfoot li{
+  font-size: 3em;
+  margin-right: 3%;
+}
+/* FORMULARIO*/
+
+.title{
+  clear: both;
+}
+.caja{
+  display: black;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  font-size: 1em;
+}
+.formulario{
+  background: #0099ff;
+  height: auto;
+  width: auto;
+  margin: auto;
+  padding: 7%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+
+.campo{
+  height: 100px ;
+  text-align: center;
+}
+fieldset{
+  box-sizing: border-box;
+  border-color:#565656 ;
+  border-width: medium;
+  border-style: solid;
+}
+
+legend{
+  color: white;
+}
+
+input{
+  width:90%;
+  padding:8px 5px;
+  border:1px solid #222;
+  border-radius:0.3em;
+  margin-bottom:5px;
+  font-size: 0.5em;
+}
+
+.recordar{
+  font-size: 1em;
+}
+.olvide {
+  font-size: 1em;
+}
+button {
+  background-color: #00d8a2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  border-radius: 10px;
+}
+button:hover {
+    opacity: 0.8;
+}
+/* FIN FORMULARIO*/
+
+@media screen and (min-width: 768px) {
+  /* NAV BAR*/
+
+  nav{
+      height: 12vh;
+      background-color: #00d8a2;
+      color: #006cd8;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .logo {
+        display: inline-block;
+        width: 30%;
+        height: inherit;
+        margin-left: 2%;
+  }
+  nav img{
+     width: 40px;
+     margin-top: 14px;
+  }
+  h1{
+    width: 30%;
+    display: inline-block;
+    font-size: 2em;
+    margin-left:1px;
+  }
+  .menu{
+      float: right;
+      display: inline-block;
+      width:30%;
+      height: inherit;
+  }
+  .menu i {
+      font-size: 2.5em;
+      position: absolute;
+      right: 25px;
+      top: 15px;
+      cursor: pointer;
+  }
+  .menu ul{
+    display: none;
+    list-style-type: none;
+  }
+  .menu input{
+    display: none;
+  }
+
+  /* carrousel*/
+  .carrousel {
+      height: 40vh;
+      background-color: #d9d9d9;
+      text-align: center;
+      font-size: 28px;
+      color: #00d8a2;
+      padding: 23% 0;
+      box-sizing: border-box;
+  }
+
+  /* CONTENIDO*/
+  .main{
+    background-color: #f2f2f2;
+    padding: 5% 0;
+  }
+  h2{
+    margin: inherit;
+    padding-top: 20px;
+    text-align: center;
+    margin: 4% 0;
+    font-size: 2em;
+  }
+  .atributo{
+    margin: 0 auto;
+    margin-bottom: 10%;
+    width: 32.94%;
+    height: auto;
+    display: inline-block;
+  }
+  .atr_img {
+      background-color: #006cd8;
+      width: 48%;
+      height: 20vh;
+      border-radius: 50%;
+      font-size: 3em;
+      text-align: center;
+      box-sizing: border-box;
+      padding-top: 12%;
+      margin: 0 auto;
+  }
+  .atr_p {
+      width: 72%;
+      text-align: justify;
+      font-size: 18px;
+      margin: 0 auto;
+  }
+  .producto {
+      background-color: #006cd8;
+      width: 20%;
+      height: 24vh;
+      font-size: 4em;
+      text-align: center;
+      box-sizing: border-box;
+      padding-top: 5%;
+      margin: 10px auto;
+      margin-left: 3%;
+      display: inline-block;
+  }
+  .carrousel2{
+    position: relative;
+  }
+  .izq, .der {
+      width: 7%;
+      height: 9vh;
+      border-radius: 50%;
+      background-color: #d9d9d9;
+      color: #006cd8;
+      font-size: 2.5em;
+      text-align: center;
+      box-sizing: border-box;
+      padding-top: 0.5%;
+      border: 1px solid #006cd8;
+      z-index: 1000;
+  }
+  .izq{
+    position: absolute;
+    top:35%;
+    left: 1%;
+  }
+  .der{
+    position: absolute;
+    top:35%;
+    right: 1%;
+  }
+
+  /* footer*/
+  footer{
+    background-color: #565656;
+    color: #d9d9d9;
+    padding: 1.5% 10px;
+  }
+  footer ul{
+    list-style-type: none;
+  }
+  footer ul li{
+    display: inline-block;
+    margin-right: 2%;
+    font-size: 1.6em;
+  }
+  .redesfoot{
+    margin: 0.5% 0;
+    display: block;
+  }
+  .redesfoot li{
+    font-size: 4em;
+    margin-right: 3%;
+  }
+}
+/* FORMULARIO*/
+
+.title{
+  clear: both;
+}
+.caja{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  font-size: 1em;
+}
+.formulario{
+  background: #0099ff;
+  height: auto;
+  width: 63%;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 7%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.campo{
+  height: ;
+  text-align: center;
+}
+fieldset{
+  box-sizing: border-box;
+  border-color:#565656 ;
+  border-width: medium;
+  border-style: solid;
+}
+legend{
+  color: white;
+}
+
+input{
+  width:90%;
+  padding:8px 5px;
+  border:1px solid #222;
+  border-radius:0.3em;
+  margin-bottom:5px;
+  font-size: 0.5em;
+}
+
+button {
+  background-color: #00d8a2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  border-radius: 10px;
+}
+button:hover {
+    opacity: 0.8;
+}
+/* FIN FORMULARIO*/
+@media screen and (min-width: 1024px) {
+  /* NAV BAR*/
+
+  nav{
+      height: 7vh;
+      background-color: #00d8a2;
+      color: #006cd8;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .logo {
+        display: inline-block;
+        width: 30%;
+        height: inherit;
+        margin-left: 2%;
+  }
+  nav img{
+     width: 25px;
+     margin-top: 8px;
+  }
+  h1{
+    width: 30%;
+    display: inline-block;
+    font-size: 1.3em;
+    margin-left:1px;
+  }
+  .menu{
+      float: right;
+      display: inline-block;
+      width:30%;
+      height: inherit;
+  }
+  .menu i {
+      font-size: 2.5em;
+      position: absolute;
+      right: 25px;
+      top: 15px;
+      cursor: pointer;
+      display: none;
+  }
+  .menu ul{
+    display: inline-block;
+    list-style-type: none;
+    width: 100%;
+  }
+  .menu ul li{
+    display: inline-block;
+    margin-right: 3%;
+  }
+  .menu input{
+    display: none;
+  }
+
+  /* carrousel*/
+  .carrousel {
+      height: 40vh;
+      background-color: #d9d9d9;
+      text-align: center;
+      font-size: 28px;
+      color: #00d8a2;
+      padding: 17% 0;
+      box-sizing: border-box;
+  }
+
+  /* CONTENIDO*/
+  .main{
+    background-color: #f2f2f2;
+    padding: 5% 0;
+  }
+  h2{
+    margin: inherit;
+    padding-top: 20px;
+    text-align: center;
+    margin: -3% 0 4% 0;
+    font-size: 2em;
+  }
+  .atributo{
+    margin: 0 auto;
+    margin-bottom: 10%;
+    width: 32.94%;
+    height: auto;
+    display: inline-block;
+  }
+  .atr_img {
+      background-color: #006cd8;
+      width: 32%;
+      height: 20vh;
+      border-radius: 50%;
+      font-size: 3em;
+      text-align: center;
+      box-sizing: border-box;
+      padding-top: 9%;
+      margin: 0 auto;
+  }
+  .atr_p {
+      width: 72%;
+      text-align: justify;
+      font-size: 18px;
+      margin: 0 auto;
+  }
+  .producto {
+      background-color: #006cd8;
+      width: 20%;
+      height: 32vh;
+      font-size: 4em;
+      text-align: center;
+      box-sizing: border-box;
+      padding-top: 5%;
+      margin: 10px auto;
+      margin-left: 3%;
+      display: inline-block;
+  }
+  .carrousel2{
+    position: relative;
+  }
+  .izq, .der {
+      width: 4.7%;
+      height: 9vh;
+      border-radius: 50%;
+      background-color: #d9d9d9;
+      color: #006cd8;
+      font-size: 2.5em;
+      text-align: center;
+      box-sizing: border-box;
+      padding-top: 0.5%;
+      border: 1px solid #006cd8;
+      z-index: 1000;
+  }
+  .izq{
+    position: absolute;
+    top:35%;
+    left: 1%;
+  }
+  .der{
+    position: absolute;
+    top:35%;
+    right: 1%;
+  }
+
+  /* footer*/
+  footer{
+    background-color: #565656;
+    color: #d9d9d9;
+    padding: 1.5% 10px;
+  }
+  footer ul{
+    list-style-type: none;
+  }
+  footer ul li{
+    display: inline-block;
+    margin-right: 0.5%;
+    font-size: 1.2em;
+}
+  .redesfoot{
+    margin: 0.5% 0;
+    display: block;
+  }
+  .redesfoot li{
+    font-size: 2em;
+    margin-right: 1%;
+  }
+/* FORMULARIO*/
+
+.title{
+  clear: both;
+}
+.caja{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 86%;
+}
+.formulario{
+  background: #0099ff;
+  height: auto;
+  width: 17%;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 2%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.campo{
+  height: 100px;
+  text-align: center;
+}
+
+fieldset{
+  box-sizing: border-box;
+  width:60%;
+  border-color:#565656 ;
+  border-width: medium;
+  border-style: solid;
+  width: auto;
+}
+
+.recordar{
+  font-size: 1em;
+}
+
+.olvide{
+  font-size: 1em;
+}
+legend{
+  color: white;
+}
+
+button {
+  background-color: #00d8a2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+button:hover {
+    opacity: 0.8;
+}
+/* FIN FORMULARIO*/
+  list-style-type: none;
+}
+.menu input{
+  display: none;
+}
+
+/* carrousel*/
+.carrousel{
+  height: 40vh;
+  background-color: #d9d9d9;
+  text-align: center;
+  font-size: 50px;
+  color: #00d8a2;
+  padding: 35% 0;
+  box-sizing: border-box;
+}
+
+/* CONTENIDO*/
+.main{
+  background-color: #f2f2f2;
+  padding: 5% 0;
+}
+h2{
+  margin: inherit;
+  padding-top: 20px;
+  text-align: center;
+  margin: 8% 0;
+  font-size: 4em;
+}
+.atributo{
+  margin: 0 auto;
+  margin-bottom: 10%;
+}
+.atr_img{
+  background-color: #006cd8;
+  width: 50%;
+  height: 23vh;
+  border-radius: 50%;
+  font-size: 15em;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 10%;
+  margin: 0 auto;
+}
+.atr_p{
+  width: 90%;
+  text-align: justify;
+  font-size: 30px;
+  margin: 0 4%;
+}
+.producto{
+    background-color: #006cd8;
+    width: 35%;
+    height: 16vh;
+    font-size: 9em;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 7%;
+    margin: 10px auto;
+    margin-left: 3%;
+    display:inline-block;
+}
+.carrousel2{
+  position: relative;
+}
+.izq, .der{
+  width: 10%;
+  height: 5vh;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  color: #006cd8;
+  font-size: 3em;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 2%;
+  border: 1px solid #006cd8;
+  z-index: 1000;
+}
+.izq{
+  position: absolute;
+  top:20%;
+  left: 1%;
+}
+.der{
+  position: absolute;
+  top:20%;
+  right: 1%;
+}
+
+/* footer*/
+footer{
+  background-color: #565656;
+  color: #d9d9d9;
+  padding: 7.5% 10px;
+}
+footer ul{
+  list-style-type: none;
+}
+footer ul li{
+  display: inline-block;
+  margin-right: 2%;
+  font-size: 3em;
+}
+.redesfoot{
+  margin: 5% 0;
+  display: block;
+}
+.redesfoot li{
+  font-size: 6em;
+  margin-right: 3%;
+}
