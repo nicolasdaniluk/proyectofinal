@@ -8,26 +8,9 @@
     <title>Proyecto X</title>
   </head>
   <body>
-    <nav>
-      <div class="logo">
-        <a href="index.html">
-          <img src="kiosco.png" alt="">
-          <h1>Nombre</h1>
-        </a>
-      </div>
-      <div class="menu">
-        <label for="menu-icon" class="menu-icon">
-          <i class="fas fa-bars"></i>
-        </label>
-        <input type="checkbox" id="menu-icon">
 
-        <ul>
-          <li><a href="question.html">FAQ</a></li>
-          <li><a href="crear-cuenta.html">Crear cuenta</a></li>
-          <li><a href="login.html">Iniciar sesión</a></li>
-        </ul>
-      </div>
-    </nav>
+    <?php require_once('navbar.php'); ?>
+
     <div class="carrousel">
       CARROUSEL
       <img src="" alt="">
