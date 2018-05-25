@@ -11,7 +11,10 @@
   </head>
   <body>
 
-    <?php require_once('navbar.php'); ?>
+    <?php 
+      require_once('navbar.php'); 
+      require_once('funciones.php');
+    ?>
 
      <div class="principal">
       <section>
