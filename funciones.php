@@ -3,6 +3,7 @@
     // Chequeo si está la cookie seteada y se la paso a session para auto-logueo
     if (isset($_COOKIE['id'])) {
         $_SESSION['id'] = $_COOKIE['id'];
+
     }
     // == FUNCTION - crearUsuario ==
     /*
@@ -51,13 +52,15 @@
         } elseif ($pass != $rpass) {
             $errores['pass'] = "Tus contraseñas no coinciden";
         }
-        if ($_FILES[$archivo]['error'] != UPLOAD_ERR_OK) { // Si no subieron ninguna imagen
-            $errores['avatar'] = "Che subí una foto";
-        } else {
-            $ext = strtolower(pathinfo($_FILES[$archivo]['name'], PATHINFO_EXTENSION));
-            if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-                $errores['avatar'] = "Formatos admitidos: JPG o PNG";
-            } 
+        if($_FILES[$archivo]['name'] != ''){
+            if ($_FILES[$archivo]['error'] != UPLOAD_ERR_OK) { // Si no subieron ninguna imagen
+                $errores['avatar'] = "ERROR en la subida de la foto";
+            } else {
+                $ext = strtolower(pathinfo($_FILES[$archivo]['name'], PATHINFO_EXTENSION));
+                if ($ext != 'jpg' || $ext != 'png' || $ext != 'jpeg'|| $ext != 'PNG' || $ext != 'JPEG'|| $ext != 'JPG') {
+                    $errores['avatar'] = "Formatos admitidos: JPG o PNG";
+                }
+            }
         }
         return $errores;
     }
@@ -127,27 +130,27 @@
     */
     function guardarImagen($laImagen){
         $errores = [];
-        if ($_FILES[$laImagen]['error'] == UPLOAD_ERR_OK) {
-            // Capturo el nombre de la imagen, para obtener la extensión
-            $nombreArchivo = $_FILES[$laImagen]['name'];
-            // Obtengo la extensión de la imagen
-            $ext = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
-            // Capturo el archivo temporal
-            $archivoFisico = $_FILES[$laImagen]['tmp_name'];
-            // Pregunto si la extensión es la deseada
-            if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png') {
-                // Armo la ruta donde queda gurdada la imagen
-                $dondeEstoyParado = dirname(__FILE__);
-                $rutaFinalConNombre = $dondeEstoyParado . '/img/' . $_POST['email'] . '.' . $ext;
-                // Subo la imagen definitivamente
-                move_uploaded_file($archivoFisico, $rutaFinalConNombre);
-            } else {
-                $errores['imagen'] = 'El formato tiene que ser JPG, JPEG, PNG o GIF';
-            }
-        } else {
-            // Genero error si no se puede subir
-            $errores['imagen'] = 'No subiste nada';
-        }
+           if ($_FILES[$laImagen]['error'] == UPLOAD_ERR_OK) {
+              // Capturo el nombre de la imagen, para obtener la extensión
+              $nombreArchivo = $_FILES[$laImagen]['name'];
+              // Obtengo la extensión de la imagen
+              $ext = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
+              // Capturo el archivo temporal
+              $archivoFisico = $_FILES[$laImagen]['tmp_name'];
+              // Pregunto si la extensión es la deseada
+              if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png' ||$ext == 'JPG' || $ext == 'JPEG' || $ext == 'PNG') {
+                  // Armo la ruta donde queda gurdada la imagen
+                  $dondeEstoyParado = dirname(__FILE__);
+                  $rutaFinalConNombre = $dondeEstoyParado . '/img/' . $_POST['email'] . '.' . $ext;
+                  // Subo la imagen definitivamente
+                  move_uploaded_file($archivoFisico, $rutaFinalConNombre);
+              } else {
+                  $errores['imagen'] = 'El formato tiene que ser JPG, JPEG, PNG o GIF';
+              }
+          } else {
+              // Genero error si no se puede subir
+              $errores['imagen'] = 'Error al subir la imagen';
+          }
         return $errores;
     }
     // == FUNCTION - guardarUsuario ==
@@ -158,10 +161,9 @@
         - Retorna el usuario para poder auto-loguear después del registro
     */
     function guardarUsuario($data, $imagen){
-        $usuario = crearUsuario($data, $imagen);
-        $usuarioJSON = json_encode($usuario);
+        $usuarioJSON = json_encode($data);
         // Inserta el objeto JSON en nuestro archivo de usuarios
-        file_put_contents('usuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND);
+        file_put_contents('usuarios.json', $usuarioJSON.PHP_EOL, FILE_APPEND);
         // Devuelvo al usuario para poder auto loguearlo después del registro
         return $usuario;
     }
@@ -184,7 +186,7 @@
         } else {
             // Si el mail existe, me guardo al usuario dueño del mismo
             // $usuario = existeEmail($email);
-            
+
             // Pregunto si coindice la password escrita con la guardada en el JSON
         if (!password_verify($pass, $usuario["pass"])) {
             $arrayADevolver['pass'] = "Credenciales incorrectas";
@@ -201,7 +203,7 @@
     function loguear($usuario) {
         // Guardo en $_SESSION el ID del USUARIO
        $_SESSION['id'] = $usuario['id'];
-        header('location: perfil.php');
+        header('location: bienvenida.php');
         exit;
     }
     // FUNCTION - estaLogueado
@@ -228,4 +230,12 @@
             }
         }
         return false;
+    }
+    function getDato($id,$dato){
+      $usu= traerPorId($id);
+      foreach ($usu as $key => $val) {
+          if ($dato == $key) {
+              return $val;
+          }
+      }
     }

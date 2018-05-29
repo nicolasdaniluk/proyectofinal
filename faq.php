@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <title>Proyecto X</title>
+    <!--fontawesome -->
+    <script type="text/javascript" src="fontawesome/js/fontawesome-all.js"></script>
+      <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"> -->
+  <title>Proyecto X</title>
   </head>
   <body>
+          <?php include_once('navbar.php')  ?>
 
-    <?php 
-      require_once('navbar.php'); 
-      require_once('funciones.php');
-    ?>
 
      <div class="principal">
       <section>
@@ -87,19 +86,20 @@
         </article>
      </section>
      </div>
+
      <footer>
-      <ul>
-        <li><a href="#">FAQ |</a></li>
-        <li><a href="#">Crear cuenta |</a></li>
-        <li><a href="#">Iniciar sesión</a></li>
-      </ul>
-      <ul class="redesfoot">
-        <li><i class="fab fa-facebook-square"></i></li>
-        <li><i class="fab fa-twitter-square"></i></li>
-        <li><i class="fab fa-instagram"></i></li>
-        <li><i class="fab fa-tumblr-square"></i></li>
-      </ul>
-    </footer>
+       <ul>
+         <li><a href="faq.php">FAQ |</a></li>
+         <li><a href="singin.php">Crear cuenta |</a></li>
+         <li><a href="login.php">Iniciar sesión</a></li>
+       </ul>
+       <ul class="redesfoot">
+         <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+         <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+         <li><a href="#"><i class="fab fa-tumblr-square"></a></i></li>
+       </ul>
+     </footer>
 
   </body>
 </html>

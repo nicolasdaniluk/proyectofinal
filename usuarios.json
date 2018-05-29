@@ -1,2 +1,4 @@
 {"id":1,"name":"sasa","email":"sasa@mail.com","pass":"$2y$10$w5kvRJBrV16Fg4heBvvjvOtcjeikHEKNLhhMvpW9FyvHIv9augoIa","foto":"img\/sasa@mail.com.png"}
 {"id":2,"name":"lala","email":"lala@mail.com","pass":"$2y$10$SuzAOPRj7OcbYKirr.Hr1ebd8hkTXs77E09LulIayEiVfZrNkHUX.","foto":"img\/lala@mail.com.png"}
+{"id":3,"name":"admin","email":"admin@meme.com","pass":"$2y$10$kjS31WksEPAn\/S5YIEJvheq5KLrHvCqVXn1wnkkYwVpgHfqPojvQ.","foto":"img\/admin@meme.com."}
+{"id":4,"name":"mod","email":"mod@meme.com","pass":"$2y$10$E8m1dAzwqukRiWCB5p.BIOqlbFZYhu6oZgVj05l0CXD6h2CXZClqu","foto":"img\/mod@meme.com.png"}
