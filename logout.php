@@ -1,6 +1,7 @@
 <?php
-	session_start();
+
+//"recordar mover esto"
 	setcookie('id', '', time() -10);
 	session_destroy();
-	header('location: login.php');
+	header('location: index.php');
 	exit;
