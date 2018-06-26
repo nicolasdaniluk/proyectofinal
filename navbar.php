@@ -1,5 +1,4 @@
 <?php
-require_once('funciones.php');
  ?>
 <nav>
   <div class="logo">
@@ -19,7 +18,13 @@ require_once('funciones.php');
       <li><a href="faq.php">FAQ</a></li>
         <li>|</li>
         <?php if (isset($_SESSION['id'])): ?>
-          <li><img class="ppnavbar" src="<?=getDato($_SESSION['id'],"foto")?>" alt="UserPic" style="width:30px;">   <?=getDato($_SESSION['id'],"name")?></li>
+          <li><img class="ppnavbar" src="<?php
+          $repo=new repositorio;
+          $user=$repo->traerPorId($_SESSION['id']);
+          $avatar=$user->getAvatar();
+          echo $avatar; ?>" alt="UserPic" style="width:30px;">
+          <?php $repo=new repositorio; $user=$repo->traerPorId($_SESSION['id']);
+          $avatar=$user->getAvatar(); $name=$user->getName(); echo $name;?></li>
             <li>|</li>
           <li><a href="logout.php">Cerrar sesion</a></li>
         <?php else: ?>

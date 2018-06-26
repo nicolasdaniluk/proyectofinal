@@ -1,29 +1,28 @@
 <?php
 
-  require_once('funciones.php');
+  require_once('autoload.php');
 
-  if (autenticador->estaLogueado()) {
+  if (autenticador::estaLogueado()) {
         header('location:bienvenida.php');
     exit;}
-
 
   // Variables para persistencia
   $email = '';
   // Array de errores vacío
   $errores = [];
-
+  $repo=new repositorio();
   // Si envían algo por $_POST
   if ($_POST) {
     $email = trim($_POST['email']);
-    $errores = validarLogin($_POST);
+    $errores = validador::validarLogin($_POST,$repo);
     if (empty($errores)) {
-      $usuario = traerPorEmail($email);
-      loguear($usuario);
-
+      $usuario = $repo->traerPorEmail($email);
       // Seteo la cookie
       if (isset($_POST["recordar"])) {
           setcookie('id', $usuario['id'], time() + 3600 * 24 * 30);
       }
+      autenticador::loguear($usuario);
+
       exit;
     }
   }

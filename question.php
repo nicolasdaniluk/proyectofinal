@@ -11,9 +11,9 @@
   </head>
   <body>
 
-    <?php 
+    <?php
       require_once('navbar.php'); 
-      require_once('funciones.php');
+      require_once('autoload.php');
     ?>
 
      <div class="principal">

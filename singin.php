@@ -1,8 +1,8 @@
 <?php
 
-require_once('funciones.php');
+require_once('autoload.php');
 //En caso de estar logueado, redirecciona pag de bienvenida ↓
-if (autenticador->estaLogueado()) {
+if (autenticador::estaLogueado()) {
       header('location:bienvenida.php');
   exit;}   //<--- Si no funca, ver exit
 //Variables a persistir↓
@@ -13,16 +13,17 @@ $errores = [];
     if ($_POST) {
           $name = trim($_POST['name']);
           $email = trim($_POST['email']);
-          $errores = validador::validarSignin($_POST,'avatar');
+          $repo= new repositorio();
+          $errores = validador::validarSignin($_POST,'avatar',$repo);
             if (empty($errores)) {
-              $usuario = crearUsuario($_POST, 'avatar');
+              $usuario = $repo->crearUsuario($_POST, 'avatar');
               //if($_FILES['avatar']['name'] != ''){
               //$errores = guardarImagen('avatar'/*,$usuario['email']*/ );
               //}
               //codigo legacy que pone avatar por defecto
               if (count($errores) == 0) {
                   //var_dump($usuario);
-                  guardarUsuario($usuario, 'avatar');
+                  $repo->guardarUsuario($usuario, 'avatar');
                   header('location:exito.php');
                   exit;
               }

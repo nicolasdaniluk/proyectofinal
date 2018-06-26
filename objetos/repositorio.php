@@ -1,30 +1,34 @@
 <?php
  class repositorio {
-   private conexion;//???
+   private $dsn;
+   private $username;
+   private $password;
+   private $db;
 
    public function __construct(){
-     // ver nombre DB
-    $dsn = 'mysql:host=localhost;dbname=woodsales;charset=utf8mb4;port=3306';
-    $username = 'root';
-    $password = 'root';
+     $this->dsn = 'mysql:host=localhost;dbname=woodsales;charset=utf8mb4;port=3306';
+     $this->username = 'root';
+     $this->password = 'root';
+
     $options = [ PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ];
      try {
-       $conexion = new PDO ($dsn, $username, $password, $options);
-       $this->conexion = $conexion;
-     }catch(PDOException $e){
+       $db = new PDO ($this->dsn, $this->username, $this->password, $options);
+       $this->db = $db;
+     }
+     catch(PDOException $e){
        echo "Error de conexión".$e->getMessage();
        exit;
      }
    }
 
    public function traerTodos() {
-     global $db;
-     $consulta = $db->prepare("SELECT * FROM usuario");
+
+     $consulta = $this->db->prepare("SELECT * FROM usuario");
      $consulta->execute();
      $tMUFA = $consulta->fetchAll(PDO::FETCH_ASSOC);
      $usuarios = [];
      foreach ($tMUFA as $mUFA) {
-       $usuarios[] = new Usuario($mUFA["id"], $mUFA["nombre"], $mUFA["pass"], $mUFA["mail"], $mUFA["tipo"],$mUFA["avatar"] )
+       $usuarios[] = new Usuario($mUFA["id"], $mUFA["nombre"], $mUFA["pass"], $mUFA["mail"], $mUFA["tipo"],$mUFA["avatar"] );
        }
        return $usuarios;
    }//chekear si no esta inutilisado
@@ -32,7 +36,7 @@
    public function crearUsuario($data, $imagen) {
 
      $foto='img/' . $data['email'] . '.' . pathinfo($_FILES[$imagen]['name'], PATHINFO_EXTENSION);
-     $usuario= new ususario(default,$data['name'],$data['email'],$data['pass'],$foto,default);
+     $usuario= new Usuario($data['name'],$data['email'],$data['pass'],$foto);
 
     return $usuario;
  }
@@ -40,13 +44,12 @@
 
     public function existeEmail($email){
 
-     global $db;
-     $consulta = $db->prepare("SELECT email FROM usuario WHERE email = :email");
+     $consulta = $this->db->prepare("SELECT mail FROM usuarios WHERE mail = :email");
      $consulta->execute([':email'=>$email]);
      $mUFA = $consulta->fetch(PDO::FETCH_ASSOC);
 
       if ($mUFA==NULL) {
-        return NULL;
+        return FALSE;
         //el mail no existe
       }
       else {
@@ -83,41 +86,45 @@
  }
 
     public function guardarUsuario($data, $imagen){
-      global $db;
 
-      $nombre = $usuario->getNombre();
-      $email=$usuario->getMail();
-      $contra=$usuario->getPass();
-      $foto=$usuario->getAvatar();
 
-      $consulta = $db->prepare("INSERT into usuarios values(default,:nombre,:mail,:contra,:foto, default)");
-      $consulta->execute(':nombre'=>$nombre,':mail'=>$mail,':contra'=>$contra, ':foto'=>$foto);
+      $nombre = $data->getName();
+      $email=$data->getEmail();
+      $objpass=$data->getPass();
+      $contra=password_hash($objpass, PASSWORD_DEFAULT);
+      $foto=$data->getAvatar();
+
+      $consulta = $this->db->prepare("INSERT into usuarios values(default,:nombre,:mail,:contra,:foto, default)");
+      $consulta->execute([
+        ':nombre'=>$nombre,
+        ':mail'=>$email,
+        ':contra'=>$contra,
+        ':foto'=>$foto]);
 
  }
 
 
     public function traerPorId($id){
-      global $db;
-      $consulta = $db->prepare("SELECT * FROM usuario WHERE id = :id");
+
+      $consulta = $this->db->prepare("SELECT * FROM usuarios WHERE id = :id");
       $consulta->execute([':id'=>$id]);
       $mUFA = $consulta->fetch(PDO::FETCH_ASSOC);
-      $usuario = new Usuario($mUFA["id"], $mUFA["nombre"], $mUFA["pass"], $mUFA["mail"], $mUFA["tipo"],$mUFA["avatar"]);
-
+      $usuario = new Usuario( $mUFA["nombre"],  $mUFA["mail"], $mUFA["clave"],$mUFA["avatar"]);
+      $usuario->setID($mUFA['id']);
       return $usuario;
  }
    public function traerPorEmail($email){
-     global $db;
-     $consulta = $db->prepare("SELECT * FROM usuario WHERE email = :email");
+
+     $consulta = $this->db->prepare("SELECT * FROM usuarios WHERE mail = :email");
      $consulta->execute([':email'=>$email]);
      $mUFA = $consulta->fetch(PDO::FETCH_ASSOC);
-     $usuario = new Usuario($mUFA["id"], $mUFA["nombre"], $mUFA["pass"], $mUFA["mail"], $mUFA["tipo"],$mUFA["avatar"]);
-
+     $usuario = new Usuario($mUFA["nombre"], $mUFA["mail"],$mUFA["clave"], $mUFA["tipo_usuario"],$mUFA["avatar"]);
+     $usuario->setID($mUFA['id']);
      return $usuario;
   }
 
     public function getDato($id,$dato){
-      global $db;
-      $consulta = $db->prepare("SELECT :dato FROM usuario WHERE id = :id");
+      $consulta = $this->db->prepare("SELECT :dato FROM usuarios WHERE id = :id");
       $consulta->execute([':id'=>$id, ':dato'=>$dato]);
       $mUFA = $consulta->fetch(PDO::FETCH_ASSOC);
       return $mUFA;

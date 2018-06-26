@@ -19,7 +19,14 @@
   <title>Proyecto X</title>
   </head>
   <body>
-          <?php include_once('navbar.php')  ?>
+          <?php
+          require_once('autoload.php');
+           include_once('navbar.php');
+
+
+
+
+            ?>
 
 
      <div class="principal">

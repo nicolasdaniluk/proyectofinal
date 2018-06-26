@@ -6,7 +6,8 @@
         $_SESSION['id'] = $_COOKIE['id'];
 }
 
-    require_once(objetos/usuario.php);
-    require_once(objetos/validador.php);
-    require_once(objetos/repositorio.php);
-    require_once(objetos/autenticador.php);
+    require_once('objetos/usuario.php');
+    require_once('objetos/validador.php');
+    require_once('objetos/repositorio.php');
+    require_once('objetos/autenticador.php');
+    require_once('objetos/creadorDB.php');

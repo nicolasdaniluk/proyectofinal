@@ -4,9 +4,9 @@ class autenticador {
       return isset($_SESSION['id']);
   }
 
-  static public function loguear($usuario) {
-    $_SESSION['id'] = $usuario['id'];
-    header('location: bienvenida.php');
+  public static function loguear($usuario) {
+    $_SESSION['id'] = $usuario->getId();
+    header('location:bienvenida.php');
     exit;
   }
 

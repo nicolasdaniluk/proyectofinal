@@ -1,9 +1,8 @@
 <?php
 
-session_start();
-
-if (!estaLogueado) {
-  header('location:login.php');
+require_once('autoload.php');
+if (!autenticador::estaLogueado()) {
+      header('location:login.php');
   exit;
 }
  ?>
@@ -21,12 +20,16 @@ if (!estaLogueado) {
   <title>Proyecto X</title>
   </head>
   <body>
-          <?php include_once('navbar.php')  ?>
+          <?php include_once('navbar.php');
+          $repo=new repositorio;
+          $user=$repo->traerPorId($_SESSION['id']);
+          $name=$user->getName();
+           ?>
 
 
      <div class="principal">
       <section>
-        <h2>Hola <?=getDato($_SESSION['id'],"name")?> ¡Bienvenid@ de vuelta!</h2>
+        <h2>Hola <?php echo $name; ?> ¡Bienvenid@ de vuelta!</h2>
         <article >
             <h3>Tus ultimas acciones fueron:</h3>
             <ul>

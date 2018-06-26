@@ -1,5 +1,5 @@
 <?php
-namespace('objetos/usuario')
+
 
 class Usuario{
   private $id;
@@ -11,10 +11,14 @@ class Usuario{
   public function __construct ($name, $email, $pass, $avatar){
     $this->name = $name;
     $this->email= strtolower($email);
-    $this->pass= password_hash($pass, PASSWORD_DEFAULT);
+    $this->pass= $pass;
     $this->avatar= $avatar;
-
   }
+
+  public function setId ($id){
+    $this->id= $id;
+  }
+
   public function setName ($name){
     $this->name= $name;
   }
@@ -28,17 +32,22 @@ class Usuario{
   public function setAvatar ($avatar){
     $this->avatar= $avatar;
   }
-  public function getName ($name){
+
+
+  public function getId (){
+    return $this->id;
+  }
+  public function getName (){
     return $this->name;
   }
 
-  public function getEmail ($email){
+  public function getEmail (){
     return $this->email;
   }
-  public function getPass ($pass){
+  public function getPass (){
     return $this->pass;
   }
-  public function getAvatar ($avatar){
+  public function getAvatar (){
     return $this->avatar;
   }
 }
